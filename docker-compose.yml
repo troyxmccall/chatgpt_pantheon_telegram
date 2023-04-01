@@ -3,12 +3,14 @@ version: "3"
 services:
   mongo:
     container_name: mongo
-    image: mongo:latest
+    image: bitnami/mongodb:latest
     restart: always
-    ports:
-      - 127.0.0.1:${MONGODB_PORT:-27017}:${MONGODB_PORT:-27017}
+    # ports:
+    #   - "${MONGODB_PORT:-27017}:${MONGODB_PORT:-27017}"
     volumes:
-      - ${MONGODB_PATH:-./mongodb}:/data/db
+      - "${MONGODB_PATH:-./mongodb}:/data/db"
+    networks:
+      - gpt_internal_network
     # TODO: add auth
 
   chatgpt_telegram_bot:
@@ -20,13 +22,15 @@ services:
       dockerfile: Dockerfile
     depends_on:
       - mongo
+    networks:
+      - gpt_internal_network
 
   mongo_express:
     container_name: mongo-express
     image: mongo-express:latest
     restart: always
-    ports:
-      - 127.0.0.1:${MONGO_EXPRESS_PORT:-8081}:${MONGO_EXPRESS_PORT:-8081}
+    # ports:
+    #   - "${MONGO_EXPRESS_PORT:-8081}:${MONGO_EXPRESS_PORT:-8081}"
     environment:
       - ME_CONFIG_MONGODB_SERVER=mongo
       - ME_CONFIG_MONGODB_PORT=${MONGODB_PORT:-27017}
@@ -36,3 +40,8 @@ services:
       - ME_CONFIG_BASICAUTH_PASSWORD=${MONGO_EXPRESS_PASSWORD:-password}
     depends_on:
       - mongo
+    networks:
+      - gpt_internal_network
+
+networks:
+  gpt_internal_network:
