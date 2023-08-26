@@ -25,9 +25,11 @@ You can deploy your own bot, or use mine: [@chatgpt_karfly_bot](https://t.me/cha
 - No request limits
 - Message streaming (watch demo)
 - GPT-4 support
+- Group Chat support (/help_group_chat to get instructions)
+- DALLE 2 (choose 👩‍🎨 Artist mode to generate images)
 - Voice message recognition
 - Code highlighting
-- Special chat modes: 👩🏼‍🎓 Assistant, 👩🏼‍💻 Code Assistant, 📝 Text Improver and 🎬 Movie Expert. You can easily create your own chat modes by editing `config/chat_modes.yml`
+- 15 special chat modes: 👩🏼‍🎓 Assistant, 👩🏼‍💻 Code Assistant, 👩‍🎨 Artist, 🧠 Psychologist, 🚀 Elon Musk and other. You can easily create your own chat modes by editing `config/chat_modes.yml`
 - Support of [ChatGPT API](https://platform.openai.com/docs/guides/chat/introduction)
 - List of allowed Telegram users
 - Track $ balance spent on OpenAI API
@@ -47,14 +49,19 @@ You can deploy your own bot, or use mine: [@chatgpt_karfly_bot](https://t.me/cha
 - [ЮMoney](https://yoomoney.ru)
 - and [many-many other](https://core.telegram.org/bots/payments#supported-payment-providers)
 
-If you want to add payments to your bot – write me on Telegram ([@karfly](https://t.me/karfly)).
+If you want to add payments to your bot and create profitable business – write me on Telegram ([@karfly](https://t.me/karfly)).
 
 ## News
+- *21 Apr 2023*:
+    - DALLE 2 support
+    - Group Chat support (/help_group_chat to get instructions)
+    - 10 new hot chat modes and updated chat mode menu with pagination: 🇬🇧 English Tutor, 🧠 Psychologist, 🚀 Elon Musk, 📊 SQL Assistant and other.
 - *24 Mar 2023*: GPT-4 support. Run `/settings` command to choose model
 - *15 Mar 2023*: Added message streaming. Now you don't have to wait until the whole message is ready, it's streamed to Telegram part-by-part (watch demo)
 - *9 Mar 2023*: Now you can easily create your own Chat Modes by editing `config/chat_modes.yml`
 - *8 Mar 2023*: Added voice message recognition with [OpenAI Whisper API](https://openai.com/blog/introducing-chatgpt-and-whisper-apis). Record a voice message and ChatGPT will answer you!
-- *2 Mar 2023*: Added support of [ChatGPT API](https://platform.openai.com/docs/guides/chat/introduction). It's enabled by default and can be disabled with `use_chatgpt_api` option in config. Don't forget to **rebuild** you docker image (`--build`).
+- *2 Mar 2023*: Added support of [ChatGPT API](https://platform.openai.com/docs/guides/chat/introduction).
+- *1 Aug 2023*: Added OpenAI API Base to config (useful while using OpenAI-compatible API like [LocalAI](https://github.com/go-skynet/LocalAI))
 
 ## Bot commands
 - `/retry` – Regenerate last bot answer
@@ -83,13 +90,23 @@ If you want to add payments to your bot – write me on Telegram ([@karfly](http
 ## ❤️ Top donations
 You can be in this list: <a href="https://github.com/karfly/chatgpt_telegram_bot/blob/main/static/donate/donate.md#%EF%B8%8F-donate" alt="Donate shield"><img src="https://img.shields.io/badge/-Donate-red?logo=undertale" /></a>
 
-1. [Ilias Ism](https://twitter.com/illyism). Donation: **69$**
+1. [unexpectedsunday](https://t.me/unexpectedsunday). Donation: **150$**
+
+2. [Sem](https://t.me/sembrestels). Donation: **100$**
+
+3. [Ryo](https://t.me/ryokihara). Donation: **80$**
+
+4. [Ilias Ism](https://twitter.com/illyism). Donation: **69$**
 
     *Message:* I wanted to thank you for your amazing code! It helped me start my own Telegram ChatGPT bot and add a bunch of cool features. I really appreciate your hard work on this project. For anyone interested in trying my bot, feel free to check it out here: [magicbuddy.chat](https://magicbuddy.chat) 🤖 Thanks again! 😊
 
-2. [Alexander Zimin](https://t.me/azimin). Donation: **50$**
+5. [Sebastian](https://t.me/dell1503). Donation: **55$**
 
-3. [Hans Blinken](https://t.me/hblink). Donation: **10$**
+6. [Alexander Zimin](https://t.me/azimin). Donation: **50$**
+
+7. [Kbaji20](https://t.me/Kbaji20). Donation: **30$**
+
+8. [Hans Blinken](https://t.me/hblink). Donation: **10$**
 
 ## References
 1. [*Build ChatGPT from GPT-3*](https://learnprompting.org/docs/applied_prompting/build_chatgpt)

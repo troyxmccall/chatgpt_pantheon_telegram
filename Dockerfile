@@ -11,7 +11,7 @@ ENV PYTHONFAULTHANDLER=1 \
     PIP_DEFAULT_TIMEOUT=100
 
 # Install necessary packages and create code directory
-RUN apk add --no-cache build-base && \
+RUN apk add --no-cache build-base libffi-dev && \
     mkdir -p /code
 
 # Set the working directory to /code
@@ -19,6 +19,10 @@ WORKDIR /code
 
 # Copy the current directory contents into the container at /code
 COPY . /code/
+
+# Manually build and install PyYAML
+RUN pip install cython && \
+    pip install --upgrade pyyaml
 
 # Install any needed packages specified in requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
